@@ -13,6 +13,7 @@ public class TemperatureConverter
 		static String convertedUnit = "";
 		static int conversionUnit = 0;
 		static Scanner userInput = new Scanner(System.in);
+		static double convertedTemp = 0;
 		public static void main(String[] args)
 			{
 				convertTemperature();
@@ -93,6 +94,10 @@ public class TemperatureConverter
 						convertToKelvin = true;
 						convertedUnit = "Kelvin";
 					}
-				
+				if (firstTempFarenheit && convertToCelcius)
+					{
+						convertedTemp = firstTemp - 32;
+					}
+				System.out.println(firstTemp + " degrees " + originalTempUnit + " is equal to " + convertedTemp + " degrees " + convertedUnit + ".");
 			}
 	}

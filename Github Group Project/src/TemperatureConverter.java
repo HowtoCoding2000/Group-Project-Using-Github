@@ -125,30 +125,6 @@ public class TemperatureConverter
 														convertToKelvin = true;
 														convertedUnit = "Kelvin";
 													}
-												if (firstTempFarenheit && convertToCelcius)
-													{
-														convertedTemp = firstTemp - 32;
-													}
-												else if (firstTempFarenheit && convertToKelvin)
-													{
-														convertedTemp = firstTemp + 255.372;
-													}
-												else if (firstTempCelcius && convertToFarenheit)
-													{
-														convertedTemp = firstTemp + 32;
-													}
-												else if (firstTempCelcius && convertToKelvin)
-													{
-														convertedTemp = firstTemp + 273.15;
-													}
-												else if (firstTempKelvin && convertToFarenheit)
-													{
-														convertedTemp = firstTemp - 255.372;
-													}
-												else if (firstTempKelvin && convertToCelcius)
-													{
-														convertedTemp = firstTemp - 273.15;
-													}
 											}
 									}
 							}

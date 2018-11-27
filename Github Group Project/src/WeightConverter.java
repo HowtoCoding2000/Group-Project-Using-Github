@@ -1,9 +1,10 @@
+import java.math.BigInteger;
 import java.util.*;
 
 public class WeightConverter
 	{
 		static Scanner userInput;
-		static String[] units = {"Pounds", "Kilograms", "Ounces", "Stones(UK)", "Metric Tons", "Pennyweights", "Grains", "Tons", "Hundredweights", "Grams", "Carots", "Milligrams", "Micrograms", "Imperial Tons(UK)"};    
+		static String[] units = {"Pounds", "Kilograms", "Ounces", "Stones(UK)", "Metric Tons", "Pennyweights", "Grains", "Tons", "Hundredweights", "Grams", "Carats", "Milligrams", "Micrograms", "Imperial Tons(UK)"};    
 		
 		public static void main(String[] args)
 		{
@@ -15,7 +16,8 @@ public class WeightConverter
 		
 		static int startingUnit;
 		static int unitAmount;
-		static int answer;
+		static long answer;
+		static BigInteger largeAnswer;
 		static int endingUnit;
 
 		private static void greeting()
@@ -92,9 +94,9 @@ public class WeightConverter
 					}
 				else if(startingUnit == 11)
 					{
-						System.out.println("How many carots are you converting?");
+						System.out.println("How many carats are you converting?");
 						unitAmount = userInput.nextInt();
-						Carots();
+						Carats();
 					}
 				else if(startingUnit == 12)
 					{
@@ -178,7 +180,7 @@ public class WeightConverter
 				
 			}
 
-		private static void Carots()
+		private static void Carats()
 			{
 				// TODO Auto-generated method stub
 				
@@ -216,51 +218,52 @@ public class WeightConverter
 					}
 				else if(endingUnit == 2)	//kilogram
 					{
-						
+						answer = (long) (unitAmount * 1016.047);
 					}
 				else if(endingUnit == 3)	//ounces
 					{
-						
+						answer = unitAmount * 35840;
 					}
 				else if(endingUnit == 4)	//stones
 					{
-						
+						answer = unitAmount * 160;
 					}
 				else if(endingUnit == 5)	//metric tons
 					{
-						
+						answer = (long) (unitAmount * 1.016);
 					}
 				else if(endingUnit == 6)	//pennyweights
 					{
-						
+						answer = (long) (unitAmount * 653333.333);
 					}
 				else if(endingUnit == 7)	//grains
 					{
-						
+						answer = unitAmount * 15680000;
 					}
 				else if(endingUnit == 8)	//tons
 					{
-						
+						answer = (long) (unitAmount * 1.12);
 					}
 				else if(endingUnit == 9)	//hundredweights
 					{
-						
+						answer = unitAmount * 20;
 					}
 				else if(endingUnit == 10)	//grams
 					{
-						
+						answer = unitAmount * 1016000;
 					}
-				else if(endingUnit == 11)	//carots
+				else if(endingUnit == 11)	//carats
 					{
-						
+						answer = (long) (unitAmount * 5080000);
 					}
 				else if(endingUnit == 12)	//milligrams
 					{
-						
+						answer = (long) (unitAmount * 1016000000);
 					}
 				else if(endingUnit == 13)	//micrograms
 					{
-						
+						BigInteger value = new BigInteger(1016000000000);
+						largeAnswer = unitAmount.multiply(value);
 					}
 				
 				
@@ -268,15 +271,15 @@ public class WeightConverter
 		
 		private static void result()
 			{
-				for(int i = 0; i < units.length; i++)
+				for(int i = 0; i <= units.length; i++)
 					{
 						if(i == startingUnit)
 							{
-								for(int j = 0; j < units.length; j++)
+								for(int j = 0; j <= units.length; j++)
 									{
 										if(j == endingUnit)
 											{
-												
+												System.out.println(answer + " " + units[endingUnit - 1]);
 											}
 									}
 							}

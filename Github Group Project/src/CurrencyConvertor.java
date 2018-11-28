@@ -20,7 +20,7 @@ public class CurrencyConvertor {
 		System.out.println("Please choose an option");
 		Scanner userInput = new Scanner(System.in);
 		int input = userInput.nextInt();
-	
+		//attempt
 		
 			switch(input)
 			{

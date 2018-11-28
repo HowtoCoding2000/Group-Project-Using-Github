@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class CurrencyConvertor {
 
-	
-	
+	public static void main(String[] args) 
+	{
+	 currency();
+	}
 	static boolean run = true;
 	static double finalNumber = 0;
 	public static void currency()
@@ -63,8 +65,10 @@ public class CurrencyConvertor {
 		}
 		
 		
-	}
 	
+
+}
+
 
 
 

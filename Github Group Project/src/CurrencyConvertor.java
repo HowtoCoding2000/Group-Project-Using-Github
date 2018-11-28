@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class CurrencyConvertor {
 
-	
-	
+	public static void main(String[] args) 
+	{
+	 currency();
+	}
 	static boolean run = true;
 	static double finalNumber = 0;
 	public static void currency()
@@ -18,7 +20,7 @@ public class CurrencyConvertor {
 		System.out.println("Please choose an option");
 		Scanner userInput = new Scanner(System.in);
 		int input = userInput.nextInt();
-	
+		//attempt
 		
 			switch(input)
 			{
@@ -63,8 +65,10 @@ public class CurrencyConvertor {
 		}
 		
 		
-	}
 	
+
+}
+
 
 
 

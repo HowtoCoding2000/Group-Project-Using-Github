@@ -1,26 +1,27 @@
-import java.math.BigInteger;
+import java.math.*;
+import java.text.*;
 import java.util.*;
 
 public class WeightConverter
 	{
 		static Scanner userInput;
-		static String[] units = {"Pounds", "Kilograms", "Ounces", "Stones(UK)", "Metric Tons", "Pennyweights", "Grains", "Tons", "Hundredweights", "Grams", "Carats", "Milligrams", "Micrograms", "Imperial Tons(UK)"};    
+		static String[] units = {"Pounds", "Kilograms", "Ounces", "Stones(UK)", "Metric Tons", "Pennyweights", "Grains", "Tons", "Hundredweights", "Grams", "Carats", "Milligrams", "Imperial Tons(UK)"};    
 		
 		public static void main(String[] args)
 		{
 			userInput = new Scanner(System.in);
-			greeting();
-			result();
+			weightConverter();
+			
 			
 		}
-		
+		static NumberFormat formatter = new DecimalFormat();
 		static int startingUnit;
 		static int unitAmount;
 		static long answer;
 		static BigInteger largeAnswer;
 		static int endingUnit;
 
-		private static void greeting()
+		private static void weightConverter()
 			{
 				System.out.println("Welcome to the weight converter. "
 						+ "\nWhat units are you starting from?");
@@ -106,12 +107,6 @@ public class WeightConverter
 					}
 				else if(startingUnit == 13)
 					{
-						System.out.println("How many micrograms are you converting?");
-						unitAmount = userInput.nextInt();
-						microgram();
-					}
-				else if(startingUnit == 14)
-					{
 						System.out.println("How many imperial tons are you converting?");
 						unitAmount = userInput.nextInt();
 						imperialTons();
@@ -188,14 +183,71 @@ public class WeightConverter
 
 		private static void milligram()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 0;
+				boolean occurence = false;
+				for(String s: units)
+					{
+						if(i != startingUnit - 1 && !occurence)
+							{
+								System.out.println("[" + i +"] " + s);
+							}
+						else if(i == startingUnit)
+							{
+								occurence = true;
+							}
+					}
+				endingUnit = userInput.nextInt();
 				
-			}
-
-		private static void microgram()
-			{
-				// TODO Auto-generated method stub
-				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount * 2240;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = (long) (unitAmount * 1016.047);
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 35840;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount * 160;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = (long) (unitAmount * 1.016);
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = (long) (unitAmount * 653333.333);
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 15680000;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = (long) (unitAmount * 1.12);
+					}
+				else if(endingUnit == 9)	//hundredweights
+					{
+						answer = unitAmount * 20;
+					}
+				else if(endingUnit == 10)	//grams
+					{
+						answer = unitAmount * 1016000;
+					}
+				else if(endingUnit == 11)	//carats
+					{
+						answer = (long) (unitAmount * 5080000);
+					}
+				else if(endingUnit == 12)	//imperial tons
+					{
+						answer = (long) (unitAmount * 1016000000);
+					}
+				result();
 			}
 
 		private static void imperialTons()
@@ -260,13 +312,8 @@ public class WeightConverter
 					{
 						answer = (long) (unitAmount * 1016000000);
 					}
-				else if(endingUnit == 13)	//micrograms
-					{
-						BigInteger value = new BigInteger(1016000000000);
-						largeAnswer = unitAmount.multiply(value);
-					}
 				
-				
+				result();
 			}
 		
 		private static void result()
@@ -279,7 +326,16 @@ public class WeightConverter
 									{
 										if(j == endingUnit)
 											{
-												System.out.println(answer + " " + units[endingUnit - 1]);
+												if(answer >= Long.MAX_VALUE)
+													{
+														NumberFormat bigNumber = new DecimalFormat();
+														bigNumber = new DecimalFormat("0.######E0");
+														System.out.println(unitAmount + " " + units[startingUnit - 1] + " converts to " + bigNumber.format(answer) + " " + units[endingUnit - 1]);
+													}
+												else
+													{
+														System.out.println(unitAmount + " " + units[startingUnit - 1] + " converts to " + answer + " " + units[endingUnit - 1]);
+													}
 											}
 									}
 							}

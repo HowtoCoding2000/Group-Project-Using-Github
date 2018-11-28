@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class TemperatureConverter
 	{
-		static boolean firstTempFarenheit = false;
+		static boolean firstTempFahrenheit = false;
 		static boolean firstTempCelsius = false;
 		static boolean firstTempKelvin = false;
-		static boolean convertToFarenheit = false;
+		static boolean convertToFahrenheit = false;
 		static boolean convertToCelsius = false;
 		static boolean convertToKelvin = false;
 		static double firstTemp = 0;
@@ -20,11 +20,13 @@ public class TemperatureConverter
 			}
 		public static void convertTemperature()
 			{
+				System.out.println("Enter a temperature you want to convert.");
+				firstTemp = userInput.nextDouble();
 				boolean running = true;
 				while (running)
 					{
 						System.out.println("Enter the number that corresponds with the unit that your temperature is in.");
-						System.out.println("(1) Farenheit");
+						System.out.println("(1) Fahrenheit");
 						System.out.println("(2) Celcius");
 						System.out.println("(3) Kelvin");
 						firstTempUnit = userInput.nextInt();
@@ -33,8 +35,8 @@ public class TemperatureConverter
 								running = false;
 								if (firstTempUnit == 1)
 									{
-										firstTempFarenheit = true;
-										originalTempUnit = "Farenheit";
+										firstTempFahrenheit = true;
+										originalTempUnit = "Fahrenheit";
 									}
 								else if (firstTempUnit == 2)
 									{
@@ -48,65 +50,65 @@ public class TemperatureConverter
 									}
 							}
 					}
-				System.out.println("Enter the number that corresponds with the unit you want to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
-				System.out.println("(1) Farenheit");
-				System.out.println("(2) Celcius");
-				System.out.println("(3) Kelvin");
-				firstTempUnit = userInput.nextInt();
-				if (firstTempUnit != 1 && firstTempUnit != 2 && firstTempUnit != 3)
+				running = true;
+				while (running)
 					{
-						running = true;
-						while (running)
+						System.out.println("Enter the number that corresponds with the unit you want to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
+						System.out.println("(1) Fahrenheit");
+						System.out.println("(2) Celcius");
+						System.out.println("(3) Kelvin");
+						conversionUnit = userInput.nextInt();
+						if (conversionUnit == 1 || conversionUnit == 2 || conversionUnit == 3)
 							{
-								System.out.println("Enter the number that corresponds with the unit you want to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
-								System.out.println("(1) Farenheit");
-								System.out.println("(2) Celcius");
-								System.out.println("(3) Kelvin");
-								conversionUnit = userInput.nextInt();
-								if (firstTempUnit == 1 || firstTempUnit == 2 || firstTempUnit == 3)
+								if (conversionUnit != firstTempUnit)
 									{
 										running = false;
 									}
-							}
-					}
-				else if (conversionUnit == firstTempUnit)
-					{
-						running = true;
-						while (running)
-							{
-								System.out.println("Your original temperature is in " + originalTempUnit + ".");
-								System.out.println("Please choose a unit other than " + originalTempUnit + " to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
-								System.out.println("(1) Farenheit");
-								System.out.println("(2) Celcius");
-								System.out.println("(3) Kelvin");
-								conversionUnit = userInput.nextInt();
-								if (conversionUnit == 1 || conversionUnit == 2 || conversionUnit == 3)
+								else
 									{
-										if (conversionUnit != firstTempUnit)
-											{
-												running = false;
-												if (conversionUnit == 1)
-													{
-														convertToFarenheit = true;
-														convertedUnit = "Farenheit";
-													}
-												else if (conversionUnit == 2)
-													{
-														convertToCelsius = true;
-														convertedUnit = "Celcius";
-													}
-												else if (conversionUnit == 3)
-													{
-														convertToKelvin = true;
-														convertedUnit = "Kelvin";
-													}
-											}
+										System.out.println("Your original temperature is in " + originalTempUnit + ".");
+										System.out.println("Please choose a unit other than " + originalTempUnit + " to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
 									}
 							}
 					}
-				else if (conversionUnit == 1)
+//				if (conversionUnit == firstTempUnit)
+//					{
+//						running = true;
+//						while (running)
+//							{
+//								System.out.println("Your original temperature is in " + originalTempUnit + ".");
+//								System.out.println("Please choose a unit other than " + originalTempUnit + " to convert " + firstTemp + " degrees " + originalTempUnit + " into.");
+//								System.out.println("(1) Fahrenheit");
+//								System.out.println("(2) Celcius");
+//								System.out.println("(3) Kelvin");
+//								conversionUnit = userInput.nextInt();
+//								if (conversionUnit == 1 || conversionUnit == 2 || conversionUnit == 3)
+//									{
+//										if (conversionUnit != firstTempUnit)
+//											{
+//												running = false;
+//											}
+//									}
+//							}
+//						if (conversionUnit == 1)
+//							{
+//								convertToFahrenheit = true;
+//								convertedUnit = "Fahrenheit";
+//							}
+//						else if (conversionUnit == 2)
+//							{
+//								convertToCelsius = true;
+//								convertedUnit = "Celcius";
+//							}
+//						else if (conversionUnit == 3)
+//							{
+//								convertToKelvin = true;
+//								convertedUnit = "Kelvin";
+//							}
+//					}
+				if (conversionUnit == 1)
 					{
-						convertToFarenheit = true;
+						convertToFahrenheit = true;
 						convertedUnit = "Farenheit";
 					}
 				else if (conversionUnit == 2)
@@ -119,15 +121,15 @@ public class TemperatureConverter
 						convertToKelvin = true;
 						convertedUnit = "Kelvin";
 					}
-				if (firstTempFarenheit && convertToCelsius)
+				if (firstTempFahrenheit && convertToCelsius)
 					{
 						convertedTemp = firstTemp - 32;
 					}
-				else if (firstTempFarenheit && convertToKelvin)
+				else if (firstTempFahrenheit && convertToKelvin)
 					{
 						convertedTemp = firstTemp + 255.372;
 					}
-				else if (firstTempCelsius && convertToFarenheit)
+				else if (firstTempCelsius && convertToFahrenheit)
 					{
 						convertedTemp = firstTemp + 32;
 					}
@@ -135,7 +137,7 @@ public class TemperatureConverter
 					{
 						convertedTemp = firstTemp + 273.15;
 					}
-				else if (firstTempKelvin && convertToFarenheit)
+				else if (firstTempKelvin && convertToFahrenheit)
 					{
 						convertedTemp = firstTemp - 255.372;
 					}

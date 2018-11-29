@@ -26,7 +26,7 @@ public class UniversalConverter
 						System.out.println("Please choose the converter you would like to use.");
 						System.out.println("(1) Temperature Converter.");
 						System.out.println("(2) Currency Converter");
-//						System.out.println("(3) Weight Converter");
+						System.out.println("(3) Weight Converter");
 						userConverterSelection = userInput.nextInt();
 						//switch statement directing toward converter methods
 						switch (userConverterSelection)
@@ -41,10 +41,11 @@ public class UniversalConverter
 										runningUniversalConverter = false;
 										CurrencyConvertor.currency();
 									}
-//							case 3:
-//									{
-//										converter method
-//									}
+							case 3:
+									{
+										runningUniversalConverter = false;
+										WeightConverter.weightConverter();
+									}
 							default:
 									{
 										System.out.println("Please choose from the available converters");

@@ -103,37 +103,361 @@ public class WeightConverter
 
 		private static void lbs()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount / 2.205;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 16.0;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount / 14.0;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount / 2204.623;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 291.667;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 7000.0;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount / 2000.0;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount * 453.592;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 2267.962;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 2240.0;
+					}
+				
+				result();
 				
 			}
 
 		private static void kg()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount * 2.205;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 35.274;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount / 6.35;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount / 1000.0;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 643.015;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 15432.358;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount / 907.185;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount * 1000.0;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 5000.0;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 1016.047;
+					}
+				
+				result();
 				
 			}
 
 		private static void oz()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount / 16.0;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount / 35.274;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount / 224.0;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount / 35273.962;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 18.229;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 437.5;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount / 32000;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount * 28.35;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 141.748;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 35840.0;
+					}
+				
+				result();
 				
 			}
 
 		private static void stones()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount * 14.0;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount * 6.35;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 224.0;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount / 157.473;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 4083.333;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 98000.0;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount / 142.857;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount * 6350.293;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 31751.466;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 160.0;
+					}
+				
+				result();
 				
 			}
 
 		private static void metricTons()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount * 2204.623;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount * 1000.0;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount * 35273.962;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount * 157.473;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 643014.931;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 1.543e+7;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount * 1.102;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount *1e+6;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 5e+6;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 1.016;
+					}
+				
+				result();
 				
 			}
 
 		private static void pennyWeights()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("What unit would you like to convert to?");
+				int i = 1;
+				for(String s: units)
+					{
+						System.out.println("[" + i +"] " + s);
+						i++;
+					}
+				endingUnit = userInput.nextInt();
+				
+				if(endingUnit == 1)			//pounds
+					{
+						answer = unitAmount / 291.667;
+					}
+				else if(endingUnit == 2)	//kilogram
+					{
+						answer = unitAmount / 643.015;
+					}
+				else if(endingUnit == 3)	//ounces
+					{
+						answer = unitAmount / 18.229;
+					}
+				else if(endingUnit == 4)	//stones
+					{
+						answer = unitAmount / 4083.333;
+					}
+				else if(endingUnit == 5)	//metric tons
+					{
+						answer = unitAmount / 643014.931;
+					}
+				else if(endingUnit == 6)	//pennyweights
+					{
+						answer = unitAmount * 1;
+					}
+				else if(endingUnit == 7)	//grains
+					{
+						answer = unitAmount * 24.0;
+					}
+				else if(endingUnit == 8)	//tons
+					{
+						answer = unitAmount / 583333.333;
+					}
+				else if(endingUnit == 9)	//grams
+					{
+						answer = unitAmount * 1.555;
+					}
+				else if(endingUnit == 10)	//carats
+					{
+						answer = unitAmount * 7.776;
+					}
+				else if(endingUnit == 11) //imperial tons
+					{
+						answer = unitAmount / 653333.333;
+					}
+				
+				result();
 				
 			}
 

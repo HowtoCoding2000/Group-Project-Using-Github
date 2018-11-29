@@ -184,68 +184,74 @@ public class WeightConverter
 		private static void milligram()
 			{
 				System.out.println("What unit would you like to convert to?");
-				int i = 0;
+				int i = 1;
 				boolean occurence = false;
 				for(String s: units)
 					{
-						if(i != startingUnit - 1 && !occurence)
+						if(i != startingUnit && !occurence)
 							{
 								System.out.println("[" + i +"] " + s);
+								i++;
 							}
 						else if(i == startingUnit)
 							{
 								occurence = true;
+							}
+						else
+							{
+								System.out.println("[" + i + "]" + s);
+								i++;
 							}
 					}
 				endingUnit = userInput.nextInt();
 				
 				if(endingUnit == 1)			//pounds
 					{
-						answer = unitAmount * 2240;
+						answer = (long) (unitAmount / 453592.37);
 					}
 				else if(endingUnit == 2)	//kilogram
 					{
-						answer = (long) (unitAmount * 1016.047);
+						answer = (long) (unitAmount / 1e-6);
 					}
 				else if(endingUnit == 3)	//ounces
 					{
-						answer = unitAmount * 35840;
+						answer = (long) (unitAmount / 28349.523);
 					}
 				else if(endingUnit == 4)	//stones
 					{
-						answer = unitAmount * 160;
+						answer = (long) (unitAmount / 6.35e+6);
 					}
 				else if(endingUnit == 5)	//metric tons
 					{
-						answer = (long) (unitAmount * 1.016);
+						answer = (long) (unitAmount / 1e-9);
 					}
 				else if(endingUnit == 6)	//pennyweights
 					{
-						answer = (long) (unitAmount * 653333.333);
+						answer = (long) (unitAmount / 1555.174);
 					}
 				else if(endingUnit == 7)	//grains
 					{
-						answer = unitAmount * 15680000;
+						answer = (long) (unitAmount / 64.799);
 					}
 				else if(endingUnit == 8)	//tons
 					{
-						answer = (long) (unitAmount * 1.12);
+						answer = (long) (unitAmount / 9.072e+8);
 					}
 				else if(endingUnit == 9)	//hundredweights
 					{
-						answer = unitAmount * 20;
+						answer = (long) (unitAmount / 1.96841e-8);
 					}
 				else if(endingUnit == 10)	//grams
 					{
-						answer = unitAmount * 1016000;
+						answer = unitAmount / 1000;
 					}
 				else if(endingUnit == 11)	//carats
 					{
-						answer = (long) (unitAmount * 5080000);
+						answer = (long) (unitAmount / 200);
 					}
 				else if(endingUnit == 12)	//imperial tons
 					{
-						answer = (long) (unitAmount * 1016000000);
+						answer = (long) (unitAmount / 1.016e+9);
 					}
 				result();
 			}
@@ -326,16 +332,16 @@ public class WeightConverter
 									{
 										if(j == endingUnit)
 											{
-												if(answer >= Long.MAX_VALUE)
-													{
-														NumberFormat bigNumber = new DecimalFormat();
-														bigNumber = new DecimalFormat("0.######E0");
-														System.out.println(unitAmount + " " + units[startingUnit - 1] + " converts to " + bigNumber.format(answer) + " " + units[endingUnit - 1]);
-													}
-												else
-													{
+//												if(answer >= Long.MAX_VALUE)
+//													{
+//														NumberFormat bigNumber = new DecimalFormat();
+//														bigNumber = new DecimalFormat("0.######E0");
+//														System.out.println(unitAmount + " " + units[startingUnit - 1] + " converts to " + bigNumber.format(answer) + " " + units[endingUnit - 1]);
+//													}
+												//else
+													//{
 														System.out.println(unitAmount + " " + units[startingUnit - 1] + " converts to " + answer + " " + units[endingUnit - 1]);
-													}
+													//}
 											}
 									}
 							}

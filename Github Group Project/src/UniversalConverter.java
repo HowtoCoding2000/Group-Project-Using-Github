@@ -27,6 +27,7 @@ public class UniversalConverter
 						System.out.println("(1) Temperature Converter.");
 						System.out.println("(2) Currency Converter");
 						System.out.println("(3) Weight Converter");
+						System.out.println("(4) Distance Converter");
 						userConverterSelection = userInput.nextInt();
 						//switch statement directing toward converter methods
 						switch (userConverterSelection)
@@ -41,10 +42,15 @@ public class UniversalConverter
 										runningUniversalConverter = false;
 										CurrencyConvertor.currency();
 									}
-							case 3:
+//							case 3:
+//									{
+//										runningUniversalConverter = false;
+//										WeightConverter.weightConverter();
+//									}
+							case 4:
 									{
 										runningUniversalConverter = false;
-										WeightConverter.weightConverter();
+										Distance.distanceConvert();
 									}
 							default:
 									{

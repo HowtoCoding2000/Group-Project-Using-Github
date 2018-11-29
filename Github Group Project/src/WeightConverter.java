@@ -4,7 +4,7 @@ import java.util.*;
 
 public class WeightConverter
 	{
-		static Scanner userInput;
+		static Scanner userInput; 
 		static String[] units = {"Pounds", "Kilograms", "Ounces", "Stones(UK)", "Metric Tons", "Pennyweights", "Grains", "Tons", "Hundredweights", "Grams", "Carats", "Milligrams", "Imperial Tons(UK)"};    
 		
 		public static void main(String[] args)

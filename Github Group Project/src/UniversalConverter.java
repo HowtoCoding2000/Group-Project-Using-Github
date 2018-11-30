@@ -42,11 +42,11 @@ public class UniversalConverter
 										runningUniversalConverter = false;
 										CurrencyConvertor.currency();
 									}
-//							case 3:
-//									{
-//										runningUniversalConverter = false;
-//										WeightConverter.weightConverter();
-//									}
+							case 3:
+									{
+										runningUniversalConverter = false;
+										WeightConverter.weightConverter();
+									}
 							case 4:
 									{
 										runningUniversalConverter = false;
